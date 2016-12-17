@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Golf Course Page</title>
+    <link rel="stylesheet" type="text/css" href="course.style.css" />
+  </head>
+  <body>
+    <header class="title">
+        <h2>Top Golf Courses in the U.S.</h2>
+    </header>
+    <nav class="navBar">
+        <!-- <div class="search"> -->
+            <input class="search-box" data-bind="textInput: searchTerm, valueUpdate: 'afterkeydown'" />
+        <!-- </div> -->
+        <!-- <div class="list"> -->
+          <ul class="courses"  data-bind="foreach: filteredList">
+            <li class="place" data-bind="text: title, click: bounce"></li>
+          </ul>
+        <!-- </div> -->
+    </nav>
+    <div id="map" class="map">Google Maps loading error. Please try again.</div>
+
+    <!-- KNOCKOUT MUST BE IN ANOTHER FILE TO WORK! YOU CANNOT PUT IT BETWEEN SCRIPT TAGS IN HTML-->
+    <script src='knockout-3.4.1.js'></script>
+    <!-- view.js must be after knockout but before jquery and bootstrap to work -->
+    <script src="course.view.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script async defer src=
+        "https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyCn5b4Bl4Igno2UOXpGffEj5I4GKDN_nUg&v=3&callback=initMap" onerror="onError()">
+    </script>
+  </body>
+</html>
